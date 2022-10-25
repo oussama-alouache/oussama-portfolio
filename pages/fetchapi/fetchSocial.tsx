@@ -1,10 +1,9 @@
 import { Post, Socails } from "../../typing"
 
- const fetchSocail =  async   ()=>{
+export const fetchSocail =  async   ()=>{
   const res = await fetch ( `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocail`)
   const data = await res.json()
   const socail : Socails [] = data.socail;
   console.log (socail)
   return socail;
 }
-export default fetchSocail

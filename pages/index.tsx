@@ -13,13 +13,13 @@ import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid'
 
 import styles from '../styles/Home.module.css'
 import { Experience, Post, Project, Skills, Socails } from '../typing'
-import  fetchPost  from './fetchapi/fetchPost'
+import { fetchPost } from './fetchapi/fetchPost'
 
-import  fetchSkills  from './fetchapi/fetchSkills'
-import  fetchProject  from './fetchapi/fetchProject'
-import fetchSocail from './fetchapi/fetchSocial'
+import { fetchSkills } from './fetchapi/fetchSkills'
+import { fetchProject } from './fetchapi/fetchProject'
+import { fetchSocail } from './fetchapi/fetchSocial'
 import Hero from '../components/Hero'
-import  fetchExperience  from './fetchapi/fetchExperience'
+import { fetchExperience } from './fetchapi/fetchExperience'
 type Props ={
   post : Post,
   experience : Experience [],

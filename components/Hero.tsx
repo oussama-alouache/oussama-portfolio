@@ -28,9 +28,9 @@ function Hero(  {post}:Props) {
           
         <img className=" relative rounded-full h-32 w-32 mx-auto object-cover" 
         src={urlFor(post.image).url()}
-        >
+        />
         
-        </img>
+      
     <div className="z-20">
         <h2 className="text-sm uppercase text-red-500 pb-2 tracking-[15px]"  > {post.role}</h2>
     <h5 className="text-5xl lg:text-6xl font-semibold scroll-px-10">

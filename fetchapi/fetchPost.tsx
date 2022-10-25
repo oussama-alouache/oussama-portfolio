@@ -1,4 +1,4 @@
-import { Post } from "../../typing"
+import { Post } from "../typing"
   
  export   const fetchPost =  async   ()=>{
   const res = await fetch ( `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPost`)

@@ -16,10 +16,11 @@ import { Experience, Post, Project, Skills, Socails } from '../typing'
 
 import Hero from '../components/Hero'
 import { fetchExperience } from '../utils/fetchExperience'
-import { fetchSocail } from '../utils/fetchSocial'
 import { fetchProject } from '../utils/fetchProject'
+import { fetchSocail } from '../utils/fetchSocial'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchPost } from '../utils/fetchPost'
+
 
 type Props ={
   post : Post,

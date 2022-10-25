@@ -15,11 +15,11 @@ import styles from '../styles/Home.module.css'
 import { Experience, Post, Project, Skills, Socails } from '../typing'
 
 import Hero from '../components/Hero'
-import { fetchExperience } from '../fetchapi/fetchExperience'
-import { fetchSocail } from '../fetchapi/fetchSocial'
-import { fetchProject } from '../fetchapi/fetchProject'
-import { fetchSkills } from '../fetchapi/fetchSkills'
-import { fetchPost } from '../fetchapi/fetchPost'
+import { fetchExperience } from '../utils/fetchExperience'
+import { fetchSocail } from '../utils/fetchSocial'
+import { fetchProject } from '../utils/fetchProject'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchPost } from '../utils/fetchPost'
 
 type Props ={
   post : Post,

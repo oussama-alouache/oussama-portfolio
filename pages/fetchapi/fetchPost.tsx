@@ -7,3 +7,4 @@ import { Post } from "../../typing"
   console.log (post)
   return post;
 }
+export default fetchPost

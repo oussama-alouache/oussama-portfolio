@@ -7,3 +7,4 @@ export const fetchExperience =  async   ()=>{
   console.log (experience)
   return experience;
 }
+export default fetchExperience

@@ -7,3 +7,4 @@ export const fetchProject =  async   ()=>{
   console.log (project)
   return project;
 }
+export default fetchProject

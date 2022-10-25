@@ -7,3 +7,4 @@ export const fetchSocail =  async   ()=>{
   console.log (socail)
   return socail;
 }
+export default fetchSocail

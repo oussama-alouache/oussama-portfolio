@@ -7,3 +7,4 @@ export const fetchSkills =  async   ()=>{
   console.log (skills)
   return skills;
 }
+export default fetchSkills

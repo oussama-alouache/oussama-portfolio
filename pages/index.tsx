@@ -1,86 +1,96 @@
-import type { NextPage } from 'next'
+import type {  GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
-const Home: NextPage = () => {
+import Link from 'next/link'
+import About from '../components/About'
+import Contact from '../components/contact'
+import Header from '../components/Header'
+
+import Projects from '../components/Projects'
+import Skill from '../components/Skills'
+import Workex from '../components/Workex'
+import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid'
+
+import styles from '../styles/Home.module.css'
+import { Experience, Post, Project, Skills, Socails } from '../typing'
+import { fetchPost } from './fetchapi/fetchPost'
+
+import { fetchSkills } from './fetchapi/fetchSkills'
+import { fetchProject } from './fetchapi/fetchProject'
+import { fetchSocail } from './fetchapi/fetchSocial'
+import Hero from '../components/Hero'
+import { fetchExperience } from './fetchapi/fetchExperience'
+type Props ={
+  post : Post,
+  experience : Experience [],
+  skills : Skills[] ,
+  project : Project[],
+  socail : Socails[]
+
+
+}
+
+const Home = (  {post,skills,experience,socail,project} : Props) => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="bg-black text-white h-screen snap-y snap-mandatary overflow-y-scroll overflow-x-hidden z-0 scrollbar  scrollbar-track-slate-400/20 
+     scrollbar-thumb-red-800
+    ">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>portfolio</title>
       </Head>
+     <Header socail = {socail} />
+<section  className="snap-center"   id='hero'>
+<Hero post={post}/>
+</section>
+<section  className="snap-center"   id='about'>
+<About post={post}   />
+</section>
+<section  className="snap-center"   id='ex'>
+<Workex experience ={experience} />
+</section>
+<section  className="snap-center"   id='skills'>
+<Skill skill = {skills}/>
+</section>
+<section  className="snap-center"   id='projects'>
+<Projects project={project}/>
+</section>
+<section  className="snap-center"   id='contact'>
+<Contact post={post}  />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+</section>
+<Link href="#hero">
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+  <footer className=" sticky bottom-5 w-full cursor-pointer">
+      <div className=" flex items-center justify-center">
+      <ChevronDoubleUpIcon  className="h-10 w-10 rounded-full grayscale hover:grayscale-0 cursor-pointer text-red-800 animate-pulse "   />
+      </div>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+  </footer>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+</Link>
     </div>
   )
 }
 
-export default Home
+export default Home ;
+
+export const getStaticProps :GetStaticProps  <Props> =async() =>{
+  const post : Post  = await fetchPost();
+  const skills : Skills [] = await fetchSkills();
+const experience : Experience [] = await fetchExperience()
+  const project : Project [] = await fetchProject();
+  const socail : Socails  []= await fetchSocail();
+  return{
+   props:{
+     post,
+     skills,
+     project,
+     socail,
+     experience
+   }
+  }
+
+
+}
+

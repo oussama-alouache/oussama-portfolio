@@ -11,7 +11,6 @@ import Skill from '../components/Skills'
 import Workex from '../components/Workex'
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid'
 
-import styles from '../styles/Home.module.css'
 import { Experience, Post, Project, Skills, Socails } from '../typing'
 
 import Hero from '../components/Hero'

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { PhoneIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Post } from '../typing';
@@ -15,7 +15,7 @@ type Inputs = {
   
   }
   
-function Contact({post}:Props) {
+  export default function Contact({post}:Props) {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
@@ -69,4 +69,3 @@ function Contact({post}:Props) {
   )
 }
 
-export default Contact

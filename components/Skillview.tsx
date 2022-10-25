@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { urlFor } from '../sanity';
 import { Skills } from '../typing';
 type Props ={
@@ -7,7 +7,7 @@ type Props ={
     skill :Skills
 }
 
-function Skillview({direcation,skill} : Props ) {
+export default function Skillview({direcation,skill} : Props ) {
   return (
 
   
@@ -47,4 +47,3 @@ function Skillview({direcation,skill} : Props ) {
   )
 }
 
-export default Skillview

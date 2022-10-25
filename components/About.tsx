@@ -1,5 +1,5 @@
 import { motion, MotionConfig } from 'framer-motion'
-import React from 'react'
+
 import { urlFor } from '../sanity'
 import { Post } from '../typing'
 type Props ={
@@ -7,7 +7,7 @@ type Props ={
   post : Post 
 
 }
-function About(  {post}:Props) {
+export default  function About(  {post}:Props) {
   return (
     <motion.div
     initial={{
@@ -64,4 +64,3 @@ function About(  {post}:Props) {
   )
 }
 
-export default About

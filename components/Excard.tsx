@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { urlFor } from '../sanity'
 import { Experience } from '../typing'
 type Props ={
@@ -7,7 +7,7 @@ type Props ={
     experience : Experience
   
   }
-function Excard({experience}:Props) {
+  export default  function Excard({experience}:Props) {
   return (
     <article className="  flex flex-col rounded-lg items-center space-y-10 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center
     bg-slate-600 p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden
@@ -65,4 +65,3 @@ new Date (experience.dateend).toDateString()
   )
 }
 
-export default Excard

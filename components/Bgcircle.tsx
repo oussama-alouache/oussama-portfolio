@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import React from 'react'
 
-function Bgcircle() {
+
+export default function Bgcircle() {
   return (
    <motion.div 
    initial={{
@@ -26,4 +26,3 @@ function Bgcircle() {
   )
 }
 
-export default Bgcircle

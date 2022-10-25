@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { Project } from '../typing'
 type Props ={
  
     project : Project[]
 }
-function Projects( {project}:Props) {
+export default  function Projects( {project}:Props) {
 
   return (
     <div className="h-screen relative flex overflow-hidden flex-col text-left m:flex-row
@@ -50,9 +50,9 @@ function Projects( {project}:Props) {
                     
                     />
 
-                    <div className="space-y-10 px-0 md: px-10 max-w-6xl">
+                    <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                         <h5 className="text-4xl font-semibold text-center"> {project.title}</h5>
-                        <p className="text-sm text-center md:text-left text-sm"> {project.summary}
+                        <p className="text-sm text-center md:text-left "> {project.summary}
                         </p>
                     </div>
                 </div>
@@ -73,4 +73,3 @@ function Projects( {project}:Props) {
   )
 }
 
-export default Projects

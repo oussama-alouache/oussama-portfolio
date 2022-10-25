@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { Skills } from '../typing'
 import Skillview from './Skillview'
 type Props ={
  
     skill : Skills[]
 }
-function Skill( {skill}:Props) {
+export default function Skill( {skill}:Props) {
     return (
         <motion.div
         initial={{
@@ -42,4 +42,3 @@ function Skill( {skill}:Props) {
       )
 }
 
-export default Skill

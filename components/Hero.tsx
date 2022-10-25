@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'
 import { urlFor } from '../sanity'
 import { Post } from '../typing'
@@ -9,7 +9,7 @@ type Props ={
   
   }
   
-function Hero(  {post}:Props) {
+  export default function Hero(  {post}:Props) {
   
   
  const [text , cont] = useTypewriter ({
@@ -51,4 +51,3 @@ function Hero(  {post}:Props) {
   )
 }
 
-export default Hero

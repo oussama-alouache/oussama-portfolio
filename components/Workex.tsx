@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+
 import { Experience } from '../typing'
 import Excard from './Excard'
 type Props ={
@@ -7,7 +7,7 @@ type Props ={
   experience : Experience []
 
 }
-function Workex({experience}:Props) {
+export default function Workex({experience}:Props) {
   return (
     <motion.div
     initial={{
@@ -48,4 +48,3 @@ function Workex({experience}:Props) {
   )
 }
 
-export default Workex

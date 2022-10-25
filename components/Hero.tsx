@@ -38,7 +38,7 @@ function Hero(  {post}:Props) {
     < Cursor cursorColor="red"/>
     </h5>
     <div className="pt-5">
-         <button className="herob">about</button>
+         <button className="herob">hello</button>
          <button className="herob">expreinces</button>
          <button className="herob">skills</button>
          <button className="herob">projects</button>
